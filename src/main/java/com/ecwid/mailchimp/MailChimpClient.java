@@ -104,7 +104,7 @@ public class MailChimpClient implements Closeable {
 		return gson.fromJson(result, method.getResultType());
 	}
 	
-	private String buildUrl(MailChimpMethod<?> method) throws UnsupportedEncodingException {
+	protected String buildUrl(MailChimpMethod<?> method) throws UnsupportedEncodingException {
 		String apikey = method.apikey;
 		if(apikey == null) throw new IllegalArgumentException("apikey is not set");
 		
